@@ -4,7 +4,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
@@ -13,7 +12,6 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 
 from xgboost import XGBRegressor
-
 
 # Read the data
 X_full = pd.read_csv('train.csv', index_col='Id')
@@ -25,7 +23,6 @@ y = X_full.SalePrice
 X_full.drop(['SalePrice'], axis=1, inplace=True)
 
 # Train test split
-
 X_train_full, X_valid_full, y_train, y_valid = train_test_split(X_full, y, test_size=0.20, random_state=0)
 
 # Split data in categorical and numerical columns
@@ -69,10 +66,6 @@ clf = Pipeline(steps=[
     ('preprocessor', preprocessor),
     ('model', model_2)
 ])
-
-
-print(X_train.head())
-print(X_valid.head())
 
 # Fit model
 clf.fit(X_train, y_train)
