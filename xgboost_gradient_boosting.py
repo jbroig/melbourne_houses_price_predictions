@@ -37,7 +37,7 @@ PARAMETERS
 
 -n_jobs: On larger datasets where runtime is a consideration, you can use parallelism to build your models faster. 
     It's common to set the parameter n_jobs equal to the number of cores on your machine. On smaller datasets, this won't help.
-    
+
 '''
 
 # Parameter tuning
